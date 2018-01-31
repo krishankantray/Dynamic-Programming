@@ -1,5 +1,6 @@
 //  USERNAME: krishankantray
 //  INSTITUTION: Galgotias University
+// https://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/
 
 #include <iostream>
 #include <cstdio>
