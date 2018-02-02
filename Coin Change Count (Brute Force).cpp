@@ -1,6 +1,9 @@
 //  USERNAME: krishankantray
 //  INSTITUTION: Galgotias University
 
+//Coin change problem : Counting number of ways making total amount equal to given value.
+//This is recursive approach in which all combinations are  unique. 
+
 #include <iostream>
 #include <cstdio>
 #include <vector>
