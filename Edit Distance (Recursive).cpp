@@ -24,7 +24,10 @@ int cost(string str1,string str2,int len1,int len2)
 		return len1;
 	if(str1[len1-1]==str2[len2-1])
 		return cost(str1,str2,len1-1,len2-1);
-	return 1+min(cost(str1,str2,len1-1,len2),min(cost(str1,str2,len1,len2-1),cost(str1,str2,len1-1,len2-1)));
+	int del= cost(str1,str2,len1-1,len2) ;
+	int insert= cost(str1,str2,len1,len2-1);
+	int replace= cost(str1,str2,len1-1,len2-1);
+	return 1+min(del,min(insert,replace));
 }
 int main()
 {
