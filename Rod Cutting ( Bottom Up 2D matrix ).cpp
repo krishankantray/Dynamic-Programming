@@ -42,10 +42,7 @@ int main() {
         }
     }
 
-    for(int i=0; i<=len ;i++){
-        for(int j=0; j<=len ;j++)
-
-        cout<<dp[i][j]<<" "; cout<<endl; }
+   cout<<dp[len][len];
 
     return 0;
 }
