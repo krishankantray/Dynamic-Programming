@@ -22,8 +22,8 @@
             cin>>n;
             int arr[n];
             for(int i=0; i<n; ++i) cin>>arr[i];
-            vector<int>dp(n,1);
-
+            vector<int>dp(arr,arr+n);
+            dp[0]=arr[0];
             for(int i=1; i<n ;++i)
             {
                 for(int j=0; j<i; ++j)
@@ -35,4 +35,4 @@
             cout<<*max_element(dp.begin(), dp.end());
 
             return 0;
-        }
+}
