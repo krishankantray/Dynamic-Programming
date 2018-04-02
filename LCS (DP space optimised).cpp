@@ -40,6 +40,6 @@
                     dp[i&1][j]=max(dp[!(i&1)][j], dp[i&1][j-1]);
             }
         }
-        cout<<max(dp[0][n-1],dp[1][n-1]);
+        cout<<max(dp[0][m],dp[1][m]);
        return 0;
     }
