@@ -1,0 +1,59 @@
+  #include <bits/stdc++.h>
+  #include <cstdio>
+  #include <cstring>
+  #include <cmath>
+  #include <string>
+  #include <chrono>
+  #include <complex>
+  #include <climits>
+  
+  using namespace std;
+
+  int main()
+  {
+     string a="ABCDGH";
+     string b="AEDFHR";
+     int na=a.length();
+     int nb=b.length();
+     int dp[na+1][nb+1];
+     for(int i=0; i<=na; i++) dp[i][0]=0;
+     for(int j=0; j<=nb; j++) dp[0][j]=0;
+
+     for(int i=1; i<=na; i++)
+      for(int j=1; j<=nb; j++)
+        if(a[i-1]==b[j-1])
+          dp[i][j]=1+dp[i-1][j-1];
+        else
+          dp[i][j]=max(dp[i-1][j], dp[i][j-1]);
+ 
+     cout<<dp[na][nb]<<endl;
+
+/* display table
+for(int i=0; i<=na; i++){
+      for(int j=0; j<=nb; j++)
+        cout<<dp[i][j]<<" ";
+      cout<<endl;
+    }
+*/
+
+deque<char>res;
+int i=na,j=nb;
+     while(i>0 && j>0){
+      
+        if(dp[i][j]==1+dp[i-1][j-1]){
+          res.push_front(a[i-1]);
+          i--, j--;
+        }
+        else
+        {
+          if(dp[i-1][j]>=dp[i][j-1])
+            i--;
+          else
+            j--;
+        }
+      }
+for(int i=0; i<res.size(); i++)
+  cout<<res[i]<<" ";
+
+     return 0;
+  }
